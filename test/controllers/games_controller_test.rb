@@ -1,8 +1,10 @@
 require 'test_helper'
+require 'clearance/testing'
 
 class GamesControllerTest < ActionController::TestCase
   setup do
-    @game = games(:one)
+    @game = Factory(:game)
+    sign_in
   end
 
   test "should get index" do

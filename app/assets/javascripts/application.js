@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require nested_form
+
+function getUserId() {
+  if(id_input = $('#user_id'))
+    return id_input.val();
+  else
+    return 0;
+}
+
+$(document).ready(function() {
+  console.log('Pushing the data for ' + getUserId());
+  _gaq.push([
+    '_setCustomVar',
+    1, // This custom var is set to slot #2.  Required parameter.
+    'User ID', // The 2nd-level name for your online content categories.  Required parameter.
+    getUserId() + '-Login', // Sets the value of "Sub-section" to "Fashion" for this particular article.  Required parameter.
+    2 // Sets the scope to session-level.  Optional parameter.
+  ]);
+
+  _gaq.push([
+    '_trackEvent',
+    getUserId() + '-Login',
+    'UserID'
+  ]);
+});
