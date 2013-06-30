@@ -34,4 +34,8 @@ class GameTest < ActiveSupport::TestCase
     assert_equal 2, @game.players[2].ranking
     assert_equal 4, @game.players[3].ranking
   end
+
+  test 'update ELO scores updates all players' do
+    
+  end
 end

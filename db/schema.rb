@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130628054555) do
+ActiveRecord::Schema.define(version: 20130628214323) do
 
   create_table "games", force: true do |t|
     t.date     "date"
@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 20130628054555) do
   add_index "players", ["user_id"], name: "index_players_on_user_id"
 
   create_table "users", force: true do |t|
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "email",                          null: false
-    t.string   "encrypted_password", limit: 128, null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "email",                                         null: false
+    t.string   "encrypted_password", limit: 128,                null: false
     t.string   "confirmation_token", limit: 128
-    t.string   "remember_token",     limit: 128, null: false
+    t.string   "remember_token",     limit: 128,                null: false
+    t.integer  "elo_score",                      default: 1000
+    t.integer  "rank",                           default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email"

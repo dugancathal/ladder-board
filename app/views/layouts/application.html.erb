@@ -8,6 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='hexagon hexagon1'>
+    <div class='hexagon-in1'>
+      <div class='hexagon-in2'></div>
+    </div>
+  </div>
   <% if signed_in? %>
     Signed in as: <%= current_user.email %>
     <%= link_to 'Sign out', sign_out_path, :method => :delete %>

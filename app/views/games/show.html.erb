@@ -14,14 +14,16 @@
       <th>Rank</th>
       <th>Email</th>
       <th>Score</th>
+      <th>Current ELO Score</th>
     </tr>
   </thead>
   <tbody>
-    <% @game.players.each do |player| %>
+    <% @leaders.each do |rank, player| %>
       <tr>
-        <td><%= player.ranking %></td>
+        <td><%= rank %></td>
         <td><%= link_to player.email, "mailto:#{player.email}" %></td>
         <td><%= player.score %></td>
+        <td><%= player.elo_score %></td>
     <% end %>
   </tbody>
 </table>

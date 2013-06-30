@@ -1,0 +1,19 @@
+<h1>Leader Board</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Email</th>
+      <th>Current ELO Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |i, user| %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= link_to user.email, "mailto:#{user.email}" %></td>
+        <td><%= user.elo_score %></td>
+    <% end %>
+  </tbody>
+</table>

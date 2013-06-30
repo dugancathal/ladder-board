@@ -11,6 +11,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @leaders = LeaderBoard.new(@game.players, :score).rankings
   end
 
   # GET /games/new
