@@ -13,6 +13,7 @@
     <tr>
       <th>Rank</th>
       <th>Email</th>
+      <th>Icon</th>
       <th>Score</th>
       <th>Current ELO Score</th>
     </tr>
@@ -22,6 +23,9 @@
       <tr>
         <td><%= rank %></td>
         <td><%= link_to player.email, "mailto:#{player.email}" %></td>
+        <td>
+          <%= content_tag 'div', nil, class: 'hexagon', data: {user_id: player.user.id} %>
+        </td>
         <td><%= player.score %></td>
         <td><%= player.elo_score %></td>
     <% end %>
