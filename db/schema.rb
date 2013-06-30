@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130628214323) do
+ActiveRecord::Schema.define(version: 20130630183835) do
 
   create_table "games", force: true do |t|
     t.date     "date"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20130628214323) do
     t.string   "remember_token",     limit: 128,                null: false
     t.integer  "elo_score",                      default: 1000
     t.integer  "rank",                           default: 0
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email"

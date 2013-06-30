@@ -24,7 +24,7 @@
         <td><%= rank %></td>
         <td><%= link_to player.email, "mailto:#{player.email}" %></td>
         <td>
-          <%= content_tag 'div', nil, class: 'hexagon', data: {user_id: player.user.id} %>
+          <%= content_tag 'div', nil, class: 'hexagon', data: {background: player.user.avatar.url} %>
         </td>
         <td><%= player.score %></td>
         <td><%= player.elo_score %></td>

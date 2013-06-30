@@ -14,14 +14,18 @@ $.fn.extend
 
     # _Insert magic here._
     return @each ()->
+      _this = $(this)
       settings.height = settings.width / Math.sqrt(3)
-      $(this).addClass('hexanize')
+      settings.background = _this.data('background')
+      _this.attr('data-background', '')
+      _this.addClass('hexanize')
         .append(
           $('<div/>').addClass('hexanize-inner1')
         ).append(
           $('<div/>').addClass('hexanize-inner2')
         )
-      # .css
+      .css
+        'background-image': 'url(' + settings.background + ')'
          # width: settings.width
          # height: settings.height
 
