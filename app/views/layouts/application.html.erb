@@ -8,21 +8,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if signed_in? %>
-    Signed in as: <%= current_user.email %>
-    <%= link_to 'Sign out', sign_out_path, :method => :delete %>
-    <input type='hidden' id="user_id" value="<%= current_user.id %>"/>
-  <% else %>
-    <%= link_to 'Sign in', sign_in_path %>
-  <% end %>
-
+  <div id='header'>
+    <div class='user-nav'>
+      <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= link_to 'Sign out', sign_out_path, :method => :delete %>
+      <input type='hidden' id="user_id" value="<%= current_user.id %>"/>
+      <% else %>
+      <%= link_to 'Sign in', sign_in_path %>
+      <% end %>
+    </div>
+  </div>
   <div id="flash">
     <% flash.each do |key, value| %>
       <div class="flash <%= key %>"><%= value %></div>
     <% end %>
   </div>
 
-<%= yield %>
+<div class='content'>
+  <div class='main'>
+    <%= yield %>
+  </div>
+  <div class='sidebar'>
+    <%= content_for?(:sidebar) ? yield(:sidebar) : render('leaderboard') %>
+  </div>
+</div>
 
 </body>
 </html>

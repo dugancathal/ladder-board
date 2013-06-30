@@ -83,5 +83,5 @@
 
 /* try passing different sizes and background images to the mixin */
 .hexanize {
-  @include hexagon(50px);
+  @include hexagon(100px);
 }

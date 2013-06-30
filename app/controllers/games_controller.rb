@@ -6,6 +6,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
+    @games_by_day = Game.by_day
   end
 
   # GET /games/1

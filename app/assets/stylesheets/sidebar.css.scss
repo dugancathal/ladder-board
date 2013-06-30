@@ -1,0 +1,35 @@
+.content {
+  @include outer-container;
+  .main {
+    @include span-columns(8);
+  }
+  .sidebar {
+    @include span-columns(4);
+    @include box-shadow(3px 3px 5px 3px #444);
+    @include omega();
+
+    font-family: $verdana;
+    height: 500px;
+    max-height: 750px;
+    overflow-x: scroll;
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .ranking {
+      font-size: 2em;
+      font-style: bold;
+    }
+
+    .score {
+      font-size: 1.5em;
+      font-style: italic;
+    }
+  }
+
+  table {
+    text-align: center;
+  }
+}

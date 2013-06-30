@@ -1,29 +1,15 @@
-<h1>Listing games</h1>
+<h1>Games</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Board Number</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.date %></td>
-        <td><%= game.number %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div id='games calendar'>
+  <%= calendar do |date| %>
+    <%= date.day %>
+    <br/>
+    <% unless @games_by_day[date].blank? %>
+      <% @games_by_day[date].each do |game| %>
+        <%= link_to "Board #{game.number}", game %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  <% end %>
+</div>
 
 <%= link_to 'New Game', new_game_path %>

@@ -42,4 +42,9 @@ class Game < ActiveRecord::Base
   def elo_k_factor(player)
     800.0 / (player.user.games.count * 2)
   end
+
+  def self.by_day
+    where(date: (Date.today - 1.month)..(Date.today + 1.month))
+      .group_by {|game| game.date }
+  end
 end

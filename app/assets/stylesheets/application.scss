@@ -2,6 +2,10 @@
 @import 'neat';
 @import 'hexanize';
 
+@import 'header';
+@import 'sidebar';
+@import 'calendar';
+
 @mixin scaleY(
   $scale: $default-scale-y,
   $perspective: false,
