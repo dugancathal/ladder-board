@@ -13,23 +13,25 @@
     max-height: 750px;
     overflow-x: scroll;
 
-    h1 {
+    h1, h2, h3, h4, h5 {
       text-align: center;
       font-size: 2em;
     }
-
-    .ranking {
-      font-size: 2em;
-      font-style: bold;
-    }
-
-    .score {
-      font-size: 1.5em;
-      font-style: italic;
-    }
   }
+}
 
-  table {
-    text-align: center;
-  }
+.ranking {
+  font-size: 2em;
+  font-style: bold;
+}
+
+.score {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+table.leaderboard {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
 }

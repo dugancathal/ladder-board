@@ -1,21 +1,20 @@
-<h1>Leader Board</h1>
-
-<table>
+<h3>Overall Rankings</h3>
+<table class='leaderboard'>
   <thead>
     <tr>
-      <th>Rank</th>
-      <th>Player</th>
-      <th>ELO Score</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% LeaderBoard.new(User.leaders, :elo_score).rankings.each do |i, user| %>
+    <% leaders.each do |rank, player| %>
       <tr>
-        <td class='ranking'><%= i %></td>
+        <td class='ranking'><%= rank %></td>
         <td>
-          <%= content_tag 'div', nil, class: 'hexagon', data: {background: user.avatar.url}, title: user.email %>
+          <%= content_tag 'div', nil, class: 'hexagon', data: {background: player.avatar.url}, title: player.email %>
         </td>
-        <td class='score'><%= user.elo_score %></td>
+        <td class='score'><%= player.score %></td>
     <% end %>
   </tbody>
 </table>

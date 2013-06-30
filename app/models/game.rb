@@ -43,8 +43,8 @@ class Game < ActiveRecord::Base
     800.0 / (player.user.games.count * 2)
   end
 
-  def self.by_day
-    where(date: (Date.today - 1.month)..(Date.today + 1.month))
+  def self.by_day(surrounded_date = Date.today)
+    where(date: (surrounded_date - 1.month)..(surrounded_date + 1.month))
       .group_by {|game| game.date }
   end
 end

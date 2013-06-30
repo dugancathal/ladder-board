@@ -30,7 +30,11 @@
     <%= yield %>
   </div>
   <div class='sidebar'>
-    <%= content_for?(:sidebar) ? yield(:sidebar) : render('leaderboard') %>
+    <% if content_for?(:sidebar) %>
+      <%= yield(:sidebar) %>
+    <% else %>
+      <%= render partial: 'leaderboard', locals: {leaders: LeaderBoard.new(User.leaders).rankings} %>
+    <% end %>
   </div>
 </div>
 

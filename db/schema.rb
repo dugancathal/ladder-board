@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130630183835) do
+ActiveRecord::Schema.define(version: 20130630222600) do
 
   create_table "games", force: true do |t|
     t.date     "date"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20130630183835) do
     t.string   "encrypted_password", limit: 128,                null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128,                null: false
-    t.integer  "elo_score",                      default: 1000
+    t.integer  "score",                          default: 1000
     t.integer  "rank",                           default: 0
     t.string   "avatar"
   end

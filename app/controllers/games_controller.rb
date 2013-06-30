@@ -6,13 +6,14 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
-    @games_by_day = Game.by_day
+    @calendar_date = parsed_date
+    @games_by_day = Game.by_day(@calendar_date)
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
-    @leaders = LeaderBoard.new(@game.players, :score).rankings
+    @leaders = LeaderBoard.new(@game.players).rankings
   end
 
   # GET /games/new
@@ -73,5 +74,11 @@ class GamesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
       params.require(:game).permit(:date, :number, players_attributes: [:user_id, :score, :_destroy, :id])
+    end
+
+    def parsed_date
+      Date.parse(params[:date])
+    rescue
+      Date.today
     end
 end

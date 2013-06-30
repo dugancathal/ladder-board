@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   def self.leaders
-    where("elo_score <> 1000").order('elo_score DESC')
+    where("score <> 1000").order('score DESC')
   end
 end

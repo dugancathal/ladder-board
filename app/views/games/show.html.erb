@@ -1,36 +1,8 @@
-<p>
-  <strong>Date:</strong>
-  <%= @game.date %>
-</p>
+<h1>Board Number: <%= @game.number %> / <%= @game.date.to_s(:long) %> </h1>
 
-<p>
-  <strong>Board Number:</strong>
-  <%= @game.number %>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Email</th>
-      <th>Icon</th>
-      <th>Score</th>
-      <th>Current ELO Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @leaders.each do |rank, player| %>
-      <tr>
-        <td><%= rank %></td>
-        <td><%= link_to player.email, "mailto:#{player.email}" %></td>
-        <td>
-          <%= content_tag 'div', nil, class: 'hexagon', data: {background: player.user.avatar.url} %>
-        </td>
-        <td><%= player.score %></td>
-        <td><%= player.elo_score %></td>
-    <% end %>
-  </tbody>
-</table>
+<div class='center'>
+  <%= render partial: 'leaderboard', locals: {leaders: @leaders} %>
+</div>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

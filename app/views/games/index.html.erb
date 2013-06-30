@@ -1,7 +1,12 @@
 <h1>Games</h1>
 
-<div id='games calendar'>
-  <%= calendar do |date| %>
+<div class='games calendar'>
+  <h3 id='month'><%= Date::MONTHNAMES[@calendar_date.month] %></h3>
+  <ul class='pagination'>
+    <li class='previous'><%= link_to '<< Previous', games_path(date: @calendar_date - 1.month) %></li>
+    <li class='next'><%= link_to 'Next >>', games_path(date: @calendar_date + 1.month) %></li>
+  </ul>
+  <%= calendar(@calendar_date) do |date| %>
     <%= date.day %>
     <br/>
     <% unless @games_by_day[date].blank? %>

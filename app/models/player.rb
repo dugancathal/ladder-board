@@ -5,7 +5,7 @@ class Player < ActiveRecord::Base
   delegate :email, to: :user
   delegate :email=, to: :user
   delegate :rank, to: :user
-  delegate :elo_score, to: :user
+  delegate :avatar, to: :user
   
   def ranking
     current_rank = 1

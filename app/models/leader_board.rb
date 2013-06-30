@@ -1,19 +1,18 @@
 class LeaderBoard
   attr_reader :points, :rank
-  def initialize(users, score_method)
+  def initialize(users)
     @users = users
-    @score_method = score_method
     @lowest_rank = 1
     @current_board = []
   end
 
   def rankings
     current_rank = 1
-    current_score = @users.first.send(@score_method)
+    current_score = @users.first.score
     number_passed = 0
     @users.map do |player|
-      if current_score > player.send(@score_method)
-        current_score = player.send(@score_method)
+      if current_score > player.score
+        current_score = player.score
         current_rank += number_passed 
         number_passed = 0
       end
@@ -21,9 +20,4 @@ class LeaderBoard
       [current_rank, player]
     end
   end
-
-  def rank_for_user(user)
-
-  end
-
 end
