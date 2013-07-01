@@ -2,9 +2,13 @@
   <h1>Board Number: <%= @game.number %> / <%= @game.date.to_s(:long) %> </h1>
 </div>
 
-<div class='center'>
-  <%= render partial: 'leaderboard', locals: {leaders: @leaders} %>
-</div>
+<% unless @game.players.blank? %>
+  <div class='center'>
+    <%= render partial: 'leaderboard', locals: {leaders: @leaders} %>
+  </div>
+<% end %>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<% if current_user && current_user.admin? %>
+  <%= link_to 'Edit', edit_game_path(@game), class: 'red-button' %> |
+<% end %>
+<%= link_to 'Back', games_path, class: 'blue-button' %>

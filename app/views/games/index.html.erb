@@ -18,6 +18,8 @@
   <% end %>
 </div>
 
-<div class='bottom-actions'>
-  <%= link_to 'New Game', new_game_path, class: 'center tendril-button' %>
-</div>
+<% if current_user && current_user.admin? %>
+  <div class='bottom-actions'>
+    <%= link_to 'New Game', new_game_path, class: 'center tendril-button' %>
+  </div>
+<% end %>

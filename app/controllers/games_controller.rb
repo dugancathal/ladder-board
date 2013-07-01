@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize, only: [:new, :create, :edit, :update]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   # GET /games
@@ -13,7 +13,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    @leaders = LeaderBoard.new(@game.players).rankings
+    @leaders = LeaderBoard.new(@game.players).rankings unless @game.players.blank?
   end
 
   # GET /games/new

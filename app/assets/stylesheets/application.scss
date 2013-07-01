@@ -3,6 +3,8 @@
 @import 'hexanize';
 
 $playerBlue: #000055;
+$playerRed: #550000;
+$playerOrange: #e76e15;
 
 @import 'calendar';
 @import 'forms';
@@ -51,6 +53,27 @@ body {
 .bottom-actions {
   text-align: center;
   margin: 10px 0;
+}
+
+#flash {
+  .flash {
+    width: 75%; 
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px auto;
+
+    border-radius: 5px;
+    text-align: center;
+
+    &.error {
+      @include linear-gradient($playerRed, darken($playerRed, 10%));
+    }
+
+    &.notice {
+      @include linear-gradient($playerOrange, darken($playerOrange, 10%));
+    }
+  }
 }
 
 @mixin scaleY(
