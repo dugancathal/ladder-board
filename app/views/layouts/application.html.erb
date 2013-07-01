@@ -36,6 +36,7 @@
     <% if content_for?(:sidebar) %>
       <%= yield(:sidebar) %>
     <% else %>
+      <h3>Overall Rankings</h3>
       <%= render partial: 'leaderboard', locals: {leaders: LeaderBoard.new(User.leaders).rankings} %>
     <% end %>
   </div>

@@ -1,18 +1,31 @@
 form {
+  .fields {
+    padding: 10px;
+  }
+
   .field {
+    text-align: center;
+    width: 100%;
+
     label {
-      float: left;
-      width: 25%;
+      margin-right: 25px;
+      margin-bottom: 20px;
+      width: 10%;
     }
 
-    .controls {
-      margin-left: 30%;
-      float: right;
-
+    input, select {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: solid 1px transparent;
+      border-bottom: solid 1px $playerBlue;
+      width: 100%;
+      background: transparent;
+      text-align: center;
     }
-    
-    &:after {
-      clear: both;
+
+    select {
+      border-bottom: transparent;
     }
   }
+
 }

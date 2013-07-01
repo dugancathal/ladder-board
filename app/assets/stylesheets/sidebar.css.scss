@@ -2,17 +2,18 @@
   @include outer-container;
   .main {
     @include span-columns(8);
+    @include linear-gradient(left, #871b00, #d71b00);
+    @include box-shadow(-3px 3px 5px 3px #444);
+    padding: 5px;
   }
+
   .sidebar {
     @include span-columns(4);
     @include box-shadow(3px 3px 5px 3px #444);
     @include omega();
 
     font-family: $verdana;
-    height: 500px;
-    max-height: 750px;
-    overflow-x: scroll;
-    background-color: #ddd;
+    background-color: #e76e15;
 
     h1, h2, h3, h4, h5 {
       text-align: center;

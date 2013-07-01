@@ -12,21 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :date %>
+    <%= f.input :date, as: :string, input_html: {type: :date} %>
   </div>
   <div class="field">
     <%= f.input :number %><br>
   </div>
 
-  <h4>Players</h4>
+  <h4 class='center'>Players</h4>
   <%= f.fields_for :players do |player_form| %>
-    <%= player_form.input :user_id, collection: User.all, label_method: :email, value_method: :id %>
-    <%= player_form.input :score %>
-    <%= player_form.link_to_remove "Remove this player" %>
-  <% end %>
-  <p><%= f.link_to_add "Add a player", :players %></p>
+    <div class='field'>
+      <%= player_form.input :user_id, collection: User.all, label_method: :email, value_method: :id %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class='field'>
+      <%= player_form.input :score %>
+    </div>
+
+    <%= player_form.link_to_remove "Remove this player", class: 'red-button' %>
+  <% end %>
+  <p class='bottom-actions'><%= f.link_to_add "Add a player", :players, class: 'blue-button' %></p>
+
+  <div class="bottom-actions">
+    <%= f.submit class: 'tendril-button'%>
+    <%= link_to 'Back', games_path, class: 'red-button' %>
   </div>
 <% end %>

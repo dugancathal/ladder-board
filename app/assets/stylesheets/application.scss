@@ -2,10 +2,13 @@
 @import 'neat';
 @import 'hexanize';
 
+$playerBlue: #000055;
+
 @import 'calendar';
 @import 'forms';
 @import 'header';
 @import 'sidebar';
+
 
 body {
   background-image: url(/assets/catan.jpg);
@@ -22,6 +25,15 @@ body {
   @include button(shiny, #00b600);
 }
 
+.blue-button {
+  @include button(shiny, #0000b6);
+}
+
+.red-button {
+  @include button(shiny, #e00000);
+}
+
+
 .center {
   text-align: center;
   margin-left: auto;
@@ -34,6 +46,11 @@ body {
 
 .left-float {
   float: left;
+}
+
+.bottom-actions {
+  text-align: center;
+  margin: 10px 0;
 }
 
 @mixin scaleY(
