@@ -1,0 +1,18 @@
+form {
+  .field {
+    label {
+      float: left;
+      width: 25%;
+    }
+
+    .controls {
+      margin-left: 30%;
+      float: right;
+
+    }
+    
+    &:after {
+      clear: both;
+    }
+  }
+}

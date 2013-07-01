@@ -14,7 +14,7 @@
     float: right;
     margin-right: 10%;
 
-    a {
+    > a { 
       @include button(shiny, #888);
       line-height: 30px;
       padding: 2px 5px;
@@ -24,4 +24,26 @@
 
 .page-header {
   text-align: center;
+}
+
+.dropdown-hover {
+  + .menu {
+    display: none;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: red;
+    @include linear-gradient(to top, #fff, #444);
+    position: absolute;
+    right: 10%;
+  }
+
+  + .menu:hover {
+    display: block;
+  }
+
+  &:hover {
+    + .menu {
+      display: block;
+    }
+  }
 }
