@@ -6,6 +6,10 @@
 @import 'sidebar';
 @import 'calendar';
 
+body {
+  @include linear-gradient(left, #bbb, #777);
+}
+
 @mixin scaleY(
   $scale: $default-scale-y,
   $perspective: false,
