@@ -19,6 +19,7 @@
   box-shadow: $boxShadow; 
   border-left: $border;
   border-right: $border;
+  z-index: 500;
   
   .hexanize-inner1,
   .hexanize-inner2 {

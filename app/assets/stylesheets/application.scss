@@ -7,7 +7,14 @@
 @import 'calendar';
 
 body {
-  @include linear-gradient(left, #bbb, #777);
+  background-image: url(/assets/catan.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 40px;
+  
+  h1 {
+    color: white;
+  }
 }
 
 @mixin scaleY(
