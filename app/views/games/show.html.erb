@@ -1,4 +1,6 @@
-<h1>Board Number: <%= @game.number %> / <%= @game.date.to_s(:long) %> </h1>
+<div class='page-header'>
+  <h1>Board Number: <%= @game.number %> / <%= @game.date.to_s(:long) %> </h1>
+</div>
 
 <div class='center'>
   <%= render partial: 'leaderboard', locals: {leaders: @leaders} %>
