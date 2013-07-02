@@ -1,4 +1,6 @@
 form {
+  color: white;
+  text-align: center;
   .fields {
     padding: 10px;
   }
@@ -21,6 +23,7 @@ form {
       width: 100%;
       background: transparent;
       text-align: center;
+      color: white;
     }
 
     select {
@@ -28,4 +31,23 @@ form {
     }
   }
 
+  .fields {
+    width: 50%;
+    float: left;
+    text-align: center;
+    
+    &:after {
+      clear: both;
+    }
+  }
+
+  .add_nested_fields:before {
+    clear: both;
+  }
+}
+
+.bottom-actions {
+  clear: both;
+  text-align: center;
+  margin: 10px 0;
 }

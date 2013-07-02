@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-GoogleAnalyticsTest::Application.load_tasks
+LadderBoard::Application.load_tasks

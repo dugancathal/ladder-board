@@ -12,6 +12,10 @@
     @include box-shadow(3px 3px 5px 3px #444);
     @include omega();
 
+    max-height: 1000px;
+    height: 75%;
+    overflow: scroll;
+
     font-family: $verdana;
     background-color: #e76e15;
 
