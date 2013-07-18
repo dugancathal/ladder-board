@@ -8,7 +8,7 @@ class Game < ActiveRecord::Base
 
   def update_elos
     players.each do |player|
-      estimated_score(player)
+      player.user.update_attribute :score, new_elo(player)
     end
   end
 
@@ -24,7 +24,7 @@ class Game < ActiveRecord::Base
   end
 
   def new_elo(player)
-    player.elo_score + (
+    player.user.score + (
       player.rank + elo_k_factor(player) * (
         score_for(player) - estimated_score(player)
       )

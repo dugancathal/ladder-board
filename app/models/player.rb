@@ -17,7 +17,7 @@ class Player < ActiveRecord::Base
         current_rank += number_passed 
         number_passed = 0
       end
-      return current_rank if player == self  
+      return current_rank if player.id == self.id
       number_passed += 1
     end
   end

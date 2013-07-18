@@ -28,4 +28,6 @@ $.fn.extend
         'background-image': 'url(' + settings.background + ')'
          # width: settings.width
          # height: settings.height
+      .on 'click', ->
+        window.location = _this.data('background')
 

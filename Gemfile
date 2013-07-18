@@ -45,9 +45,12 @@ group :doc do
 end
 
 group :test, :development do
+  #gem 'rack-mini-profiler'
   gem 'minitest'
   gem 'factory_girl_rails'
 end
+
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

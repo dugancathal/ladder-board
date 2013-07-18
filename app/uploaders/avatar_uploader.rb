@@ -22,7 +22,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    'http://placekitten.com/g/650'
+    email_hash = Digest::MD5.hexdigest(model.email)
+    "http://gravatar.com/avatar/#{email_hash}?s=100"
   end
 
   # Process files as they are uploaded:
