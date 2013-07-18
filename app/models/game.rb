@@ -4,6 +4,8 @@ class Game < ActiveRecord::Base
 
   accepts_nested_attributes_for :players, allow_destroy: true
 
+  after_update :update_elos
+
   ELO_D_FACTOR = 400
 
   def update_elos
