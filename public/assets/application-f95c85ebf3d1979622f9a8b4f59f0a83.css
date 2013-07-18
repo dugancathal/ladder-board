@@ -1,0 +1,465 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* try passing different sizes and background images to the mixin */
+.hexanize {
+  /*this smushes a square into a 60deg/120deg rhombus*/
+  position: relative;
+  width: 100px;
+  height: 57.73503px;
+  margin-top: 33.33333px;
+  margin-bottom: 33.33333px;
+  background: url(http://placekitten.com/g/650);
+  background-size: 157.73503px auto;
+  background-position: center center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  border-left: solid 3px white;
+  border-right: solid 3px white;
+  z-index: 500;
+  /*cover up the box shadows */
+  margin-left: auto;
+  margin-right: auto; }
+  .hexanize .hexanize-inner1,
+  .hexanize .hexanize-inner2 {
+    position: absolute;
+    overflow: hidden;
+    width: 70.71068px;
+    height: 70.71068px;
+    left: 12.43376px;
+    /*for some reason this 1px correction is needed */
+    background: inherit;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    -webkit-transform: scaleY(0.5466) rotate(-45deg);
+    -moz-transform: scaleY(0.5466) rotate(-45deg);
+    -ms-transform: scaleY(0.5466) rotate(-45deg);
+    -o-transform: scaleY(0.5466) rotate(-45deg);
+    transform: scaleY(0.5466) rotate(-45deg); }
+    .hexanize .hexanize-inner1:after,
+    .hexanize .hexanize-inner2:after {
+      /*counter rotate and un-scale the bg image*/
+      content: "";
+      position: absolute;
+      left: -15.43376px;
+      /*same correction as up above */
+      width: 100px;
+      height: 70.71068px;
+      top: 0;
+      background: inherit;
+      -webkit-transform: rotate(45deg) scaleY(1.82948);
+      -moz-transform: rotate(45deg) scaleY(1.82948);
+      -ms-transform: rotate(45deg) scaleY(1.82948);
+      -o-transform: rotate(45deg) scaleY(1.82948);
+      transform: rotate(45deg) scaleY(1.82948); }
+  .hexanize .hexanize-inner1 {
+    top: -35.35534px;
+    border-top: solid 5.48845px white;
+    border-right: solid 5.48845px white; }
+    .hexanize .hexanize-inner1:after {
+      background-position: center 17%;
+      margin-top: -5.48845px; }
+  .hexanize .hexanize-inner2 {
+    bottom: -35.35534px;
+    border-left: solid 5.48845px white;
+    border-bottom: solid 5.48845px white; }
+    .hexanize .hexanize-inner2:after {
+      background-position: center 83%;
+      margin-left: -4.48845px;
+      /*that pesky single pixel correction again*/ }
+  .hexanize:after {
+    content: "";
+    position: absolute;
+    top: 2.12132px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 53.49239px;
+    background: inherit; }
+
+.calendar {
+  border-collapse: collapse;
+  width: 100%; }
+  .calendar td, .calendar th {
+    font-family: "Lucida Grande", arial, helvetica, sans-serif;
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid #999; }
+  .calendar th {
+    background: #DDD;
+    color: #666;
+    text-align: center;
+    width: 14.2857142857143%; }
+  .calendar td {
+    background: #FFF;
+    color: #777;
+    height: 80px;
+    vertical-align: top;
+    font-size: 16px;
+    text-align: center; }
+  .calendar .notmonth, .calendar .notmonth a {
+    color: #CCC; }
+  .calendar .today {
+    background-color: #D7F2FF; }
+  .calendar #month {
+    margin: 0;
+    text-align: center;
+    font-size: 22px; }
+    .calendar #month a {
+      text-decoration: none;
+      padding: 0 10px;
+      color: #999; }
+  .calendar ul {
+    font-size: 11px;
+    padding-left: 20px;
+    margin: 0 0 10px 25px; }
+  .calendar ul.pagination {
+    text-align: center;
+    margin: 20px 0 0 0;
+    list-style: none; }
+    .calendar ul.pagination li {
+      display: inline; }
+      .calendar ul.pagination li a {
+        margin: 10px; }
+    .calendar ul.pagination .previous > a {
+      float: left;
+      border: 1px solid #004c00;
+      border-bottom: 1px solid #003c00;
+      border-radius: 5px;
+      box-shadow: inset 0 1px 0 0 #25d80c;
+      color: white;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #00bb00;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00bb00), color-stop(50%, #008900), color-stop(50%, #007000), color-stop(100%, #007500));
+      background-image: -webkit-linear-gradient(top, #00bb00 0%, #008900 50%, #007000 50%, #007500 100%);
+      background-image: linear-gradient(to bottom,#00bb00 0%, #008900 50%, #007000 50%, #007500 100%);
+      padding: 8px 20px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 -1px 1px #002e00; }
+      .calendar ul.pagination .previous > a:hover:not(:disabled) {
+        cursor: pointer;
+        background-color: #00ac00;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00ac00), color-stop(50%, #007d00), color-stop(50%, #006600), color-stop(100%, #006b00));
+        background-image: -webkit-linear-gradient(top, #00ac00 0%, #007d00 50%, #006600 50%, #006b00 100%);
+        background-image: linear-gradient(to bottom,#00ac00 0%, #007d00 50%, #006600 50%, #006b00 100%); }
+      .calendar ul.pagination .previous > a:active:not(:disabled) {
+        box-shadow: inset 0 0 20px 0 #004700, 0 1px 0 white; }
+      .calendar ul.pagination .previous > a:disabled {
+        opacity: 0.5;
+        cursor: not-allowed; }
+    .calendar ul.pagination .next > a {
+      float: right;
+      border: 1px solid #004c00;
+      border-bottom: 1px solid #003c00;
+      border-radius: 5px;
+      box-shadow: inset 0 1px 0 0 #25d80c;
+      color: white;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #00bb00;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00bb00), color-stop(50%, #008900), color-stop(50%, #007000), color-stop(100%, #007500));
+      background-image: -webkit-linear-gradient(top, #00bb00 0%, #008900 50%, #007000 50%, #007500 100%);
+      background-image: linear-gradient(to bottom,#00bb00 0%, #008900 50%, #007000 50%, #007500 100%);
+      padding: 8px 20px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 -1px 1px #002e00; }
+      .calendar ul.pagination .next > a:hover:not(:disabled) {
+        cursor: pointer;
+        background-color: #00ac00;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00ac00), color-stop(50%, #007d00), color-stop(50%, #006600), color-stop(100%, #006b00));
+        background-image: -webkit-linear-gradient(top, #00ac00 0%, #007d00 50%, #006600 50%, #006b00 100%);
+        background-image: linear-gradient(to bottom,#00ac00 0%, #007d00 50%, #006600 50%, #006b00 100%); }
+      .calendar ul.pagination .next > a:active:not(:disabled) {
+        box-shadow: inset 0 0 20px 0 #004700, 0 1px 0 white; }
+      .calendar ul.pagination .next > a:disabled {
+        opacity: 0.5;
+        cursor: not-allowed; }
+
+form {
+  color: white;
+  text-align: center; }
+  form .fields {
+    padding: 10px; }
+  form .field {
+    text-align: center;
+    width: 100%; }
+    form .field label {
+      margin-right: 25px;
+      margin-bottom: 20px;
+      width: 10%; }
+    form .field input, form .field select {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: solid 1px transparent;
+      border-bottom: solid 1px #000055;
+      width: 100%;
+      background: transparent;
+      text-align: center;
+      color: white; }
+    form .field select {
+      border-bottom: transparent; }
+  form .fields {
+    width: 50%;
+    float: left;
+    text-align: center; }
+    form .fields:after {
+      clear: both; }
+  form .add_nested_fields:before {
+    clear: both; }
+
+.bottom-actions {
+  clear: both;
+  text-align: center;
+  margin: 10px 0; }
+
+#header {
+  background-color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, #444444));
+  background-image: -webkit-linear-gradient(black, #444444);
+  background-image: linear-gradient(black, #444444);
+  box-shadow: 0 0 5px 0;
+  top: 0;
+  position: fixed;
+  height: 40px;
+  width: 110%;
+  line-height: 40px;
+  left: -2px;
+  z-index: 1000;
+  color: white; }
+  #header .user-nav {
+    float: right;
+    margin-right: 10%; }
+    #header .user-nav > a {
+      border: 1px solid #252525;
+      border-bottom: 1px solid #0c0c0c;
+      border-radius: 5px;
+      box-shadow: inset 0 1px 0 0 #a1a1a1;
+      color: white;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #888888;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #888888), color-stop(50%, #5c5c5c), color-stop(50%, #454545), color-stop(100%, #4a4a4a));
+      background-image: -webkit-linear-gradient(top, #888888 0%, #5c5c5c 50%, #454545 50%, #4a4a4a 100%);
+      background-image: linear-gradient(to bottom,#888888 0%, #5c5c5c 50%, #454545 50%, #4a4a4a 100%);
+      padding: 8px 20px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 -1px 1px #0b0b0b;
+      line-height: 30px;
+      padding: 2px 5px; }
+      #header .user-nav > a:hover:not(:disabled) {
+        cursor: pointer;
+        background-color: #787878;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #787878), color-stop(50%, #4e4e4e), color-stop(50%, #393939), color-stop(100%, #3d3d3d));
+        background-image: -webkit-linear-gradient(top, #787878 0%, #4e4e4e 50%, #393939 50%, #3d3d3d 100%);
+        background-image: linear-gradient(to bottom,#787878 0%, #4e4e4e 50%, #393939 50%, #3d3d3d 100%); }
+      #header .user-nav > a:active:not(:disabled) {
+        box-shadow: inset 0 0 20px 0 #141414, 0 1px 0 white; }
+      #header .user-nav > a:disabled {
+        opacity: 0.5;
+        cursor: not-allowed; }
+
+.page-header {
+  text-align: center;
+  margin: 10px; }
+
+.dropdown-hover + .menu {
+  display: none;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: red;
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #444444));
+  background-image: -webkit-linear-gradient(bottom, white, #444444);
+  background-image: linear-gradient(to top,white, #444444);
+  position: absolute;
+  right: 10%; }
+.dropdown-hover + .menu:hover {
+  display: block; }
+.dropdown-hover:hover + .menu {
+  display: block; }
+
+.content {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .content:before, .content:after {
+    content: " ";
+    display: table; }
+  .content:after {
+    clear: both; }
+  .content .main {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    background-color: #871b00;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #871b00), color-stop(100%, #d71b00));
+    background-image: -webkit-linear-gradient(left, #871b00, #d71b00);
+    background-image: linear-gradient(to right,#871b00, #d71b00);
+    box-shadow: -3px 3px 5px 3px #444444;
+    padding: 5px; }
+    .content .main:last-child {
+      margin-right: 0; }
+  .content .sidebar {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    box-shadow: 3px 3px 5px 3px #444444;
+    margin-right: 0;
+    max-height: 1000px;
+    height: 75%;
+    overflow: scroll;
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #e76e15; }
+    .content .sidebar:last-child {
+      margin-right: 0; }
+    .content .sidebar h1, .content .sidebar h2, .content .sidebar h3, .content .sidebar h4, .content .sidebar h5 {
+      text-align: center;
+      font-size: 2em; }
+
+.ranking {
+  font-size: 2em;
+  font-style: bold; }
+
+.score {
+  font-size: 1.5em;
+  font-style: italic; }
+
+table.leaderboard {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px; }
+
+body {
+  background-image: url(/assets/catan.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 40px; }
+  body h1 {
+    color: white; }
+
+.tendril-button {
+  border: 1px solid #004700;
+  border-bottom: 1px solid #003700;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #25d30c;
+  color: white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #00b600;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00b600), color-stop(50%, #008400), color-stop(50%, #006b00), color-stop(100%, #007000));
+  background-image: -webkit-linear-gradient(top, #00b600 0%, #008400 50%, #006b00 50%, #007000 100%);
+  background-image: linear-gradient(to bottom,#00b600 0%, #008400 50%, #006b00 50%, #007000 100%);
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #002900; }
+  .tendril-button:hover:not(:disabled) {
+    cursor: pointer;
+    background-color: #00a700;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a700), color-stop(50%, #007800), color-stop(50%, #006100), color-stop(100%, #006600));
+    background-image: -webkit-linear-gradient(top, #00a700 0%, #007800 50%, #006100 50%, #006600 100%);
+    background-image: linear-gradient(to bottom,#00a700 0%, #007800 50%, #006100 50%, #006600 100%); }
+  .tendril-button:active:not(:disabled) {
+    box-shadow: inset 0 0 20px 0 #004200, 0 1px 0 white; }
+  .tendril-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+
+.blue-button {
+  border: 1px solid #000065;
+  border-bottom: 1px solid #00003c;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #251dc2;
+  color: white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #0000b6;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0000b6), color-stop(50%, #000095), color-stop(50%, #000086), color-stop(100%, #000088));
+  background-image: -webkit-linear-gradient(top, #0000b6 0%, #000095 50%, #000086 50%, #000088 100%);
+  background-image: linear-gradient(to bottom,#0000b6 0%, #000095 50%, #000086 50%, #000088 100%);
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #000044; }
+  .blue-button:hover:not(:disabled) {
+    cursor: pointer;
+    background-color: #0000a4;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0000a4), color-stop(50%, #000083), color-stop(50%, #000074), color-stop(100%, #000077));
+    background-image: -webkit-linear-gradient(top, #0000a4 0%, #000083 50%, #000074 50%, #000077 100%);
+    background-image: linear-gradient(to bottom,#0000a4 0%, #000083 50%, #000074 50%, #000077 100%); }
+  .blue-button:active:not(:disabled) {
+    box-shadow: inset 0 0 20px 0 #00003c, 0 1px 0 white; }
+  .blue-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+
+.red-button {
+  border: 1px solid #6b0000;
+  border-bottom: 1px solid #620000;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #ff1d0c;
+  color: white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #e00000;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e00000), color-stop(50%, #a80000), color-stop(50%, #8a0000), color-stop(100%, #910000));
+  background-image: -webkit-linear-gradient(top, #e00000 0%, #a80000 50%, #8a0000 50%, #910000 100%);
+  background-image: linear-gradient(to bottom,#e00000 0%, #a80000 50%, #8a0000 50%, #910000 100%);
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #540000; }
+  .red-button:hover:not(:disabled) {
+    cursor: pointer;
+    background-color: #d30000;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d30000), color-stop(50%, #9e0000), color-stop(50%, #830000), color-stop(100%, #8a0000));
+    background-image: -webkit-linear-gradient(top, #d30000 0%, #9e0000 50%, #830000 50%, #8a0000 100%);
+    background-image: linear-gradient(to bottom,#d30000 0%, #9e0000 50%, #830000 50%, #8a0000 100%); }
+  .red-button:active:not(:disabled) {
+    box-shadow: inset 0 0 20px 0 #710000, 0 1px 0 white; }
+  .red-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
+
+.right-float {
+  float: right; }
+
+.left-float {
+  float: left; }
+
+#flash .flash {
+  width: 75%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px auto;
+  border-radius: 5px;
+  text-align: center; }
+  #flash .flash.error {
+    background-color: #550000;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #550000), color-stop(100%, #220000));
+    background-image: -webkit-linear-gradient(#550000, #220000);
+    background-image: linear-gradient(#550000, #220000); }
+  #flash .flash.notice {
+    background-color: #e76e15;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e76e15), color-stop(100%, #b85811));
+    background-image: -webkit-linear-gradient(#e76e15, #b85811);
+    background-image: linear-gradient(#e76e15, #b85811); }
