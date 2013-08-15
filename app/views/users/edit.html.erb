@@ -1,0 +1,41 @@
+<h1 class='center'><%= current_user.email %></h1>
+
+<p class='center'>Update your avatar</p>
+<%= simple_form_for current_user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= f.input :email %>
+  </div>
+
+  <div class='field'>
+    <%= f.input :avatar, label: 'Avatar URL' %>
+  </div>
+
+  <div class="bottom-actions">
+    <%= f.submit class: 'tendril-button'%>
+    <%= link_to 'Back', games_path, class: 'red-button' %>
+  </div>
+<% end %>
+
+<div class='center'>
+  <p class='center'>Sample Avatars</p>
+  <p> If you like any of these, simply copy and paste the Image URL to the Avatar URL field above</p>
+  <div class='avatar-box'>
+    <%= image_tag unicornify_avatar_url(current_user.email) %>
+  </div>
+  <div class='avatar-box'>
+    <%= image_tag gravatar_avatar_url(current_user.email) %>
+  </div>
+  <div class='avatar-box'>
+    <%= image_tag identicon_avatar_url(current_user.email), size: '100' %>
+  </div>
+</div>

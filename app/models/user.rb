@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :players
   has_many :games, through: :players
 
-  mount_uploader :avatar, AvatarUploader
+  #mount_uploader :avatar, AvatarUploader
 
   def self.leaders
     where("score <> 1000").order('score DESC')
